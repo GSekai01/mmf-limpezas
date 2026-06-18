@@ -1,0 +1,4 @@
+# Replace this placeholder with a monitored security contact before publishing.
+# Contact: mailto:security@example.com
+Preferred-Languages: pt-BR, en
+Canonical: https://example.com/.well-known/security.txt
