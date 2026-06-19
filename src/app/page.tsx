@@ -96,7 +96,7 @@ export default function Home() {
             <Image
               alt="Equipe profissional realizando a limpeza final de um espaço comercial"
               className="hero-background-image"
-              height={832}
+              height={830}
               priority
               sizes="100vw"
               src="/hero-limpeza-pos-obra.webp"
