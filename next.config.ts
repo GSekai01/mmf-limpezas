@@ -49,7 +49,7 @@ const securityHeaders = [
   },
   {
     key: "Cross-Origin-Resource-Policy",
-    value: "same-site",
+    value: "same-origin",
   },
   {
     key: "Content-Security-Policy-Report-Only",
