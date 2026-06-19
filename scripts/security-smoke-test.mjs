@@ -50,7 +50,7 @@ async function main() {
 
   const html = await home.text();
 
-  if (!html.includes("/hero-limpeza-pos-obra-source.png?v=20260618")) {
+  if (!html.includes("/hero-limpeza-pos-obra-source.png")) {
     throw new Error("Hero image is not referenced in the home page HTML");
   }
 

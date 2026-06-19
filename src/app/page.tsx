@@ -93,15 +93,14 @@ export default function Home() {
         <section className="hero" id="inicio">
           <div className="hero-panel">
             <div className="hero-panel-grid" aria-hidden="true" />
-            {/* Hostinger serves this reliably as a direct public asset. */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               alt="Equipe profissional realizando a limpeza final de um espaço comercial"
               className="hero-background-image"
               height={830}
-              decoding="async"
-              fetchPriority="high"
-              src="/hero-limpeza-pos-obra-source.png?v=20260618"
+              priority
+              sizes="100vw"
+              src="/hero-limpeza-pos-obra-source.png"
+              unoptimized
               width={1894}
             />
             <div className="hero-gradient" aria-hidden="true" />
