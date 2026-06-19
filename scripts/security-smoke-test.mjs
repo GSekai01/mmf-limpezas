@@ -44,6 +44,10 @@ async function main() {
     throw new Error(`Missing security headers: ${missingHeaders.join(", ")}`);
   }
 
+  if (home.headers.get("cross-origin-resource-policy") !== "same-site") {
+    throw new Error("Cross-Origin-Resource-Policy must be same-site");
+  }
+
   const html = await home.text();
 
   if (!html.includes("/hero-limpeza-pos-obra.webp")) {

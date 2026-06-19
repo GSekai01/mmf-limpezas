@@ -12,7 +12,7 @@
   - `Referrer-Policy: strict-origin-when-cross-origin`
   - `Permissions-Policy` denying camera, microphone, geolocation, payment, usb, and fullscreen
   - `Cross-Origin-Opener-Policy: same-origin`
-  - `Cross-Origin-Resource-Policy: same-origin`
+  - `Cross-Origin-Resource-Policy: same-site`
   - `Content-Security-Policy-Report-Only`
 - `Strict-Transport-Security` is only emitted in production when `ENABLE_HSTS=true`.
 - Canonical host and HTTPS redirects run only in production. Set `CANONICAL_HOST` to the chosen host, for example `mmflimpezas.com.br`.
