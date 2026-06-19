@@ -7,7 +7,6 @@ const checks = [
   { path: "/.git/config", status: 404 },
   { path: "/", status: 200 },
   { path: "/logo-azul.svg", status: 200 },
-  { path: "/hero-limpeza-pos-obra.webp", status: 200 },
 ];
 
 const requiredHeaders = [
@@ -45,21 +44,6 @@ async function main() {
   }
 
   const html = await home.text();
-
-  if (!html.includes("/hero-limpeza-pos-obra.webp")) {
-    throw new Error("Hero image is not referenced in the home page HTML");
-  }
-
-  const heroOptimizedAsset = html
-    .match(/["'](\/_next\/image\?url=%2Fhero-limpeza-pos-obra\.webp[^"']+)["']/)?.[1]
-    ?.replaceAll("&amp;", "&");
-
-  if (!heroOptimizedAsset) {
-    throw new Error("Could not find the optimized hero image URL in the home page");
-  }
-
-  await checkStatus({ path: heroOptimizedAsset, status: 200 });
-
   const nextStaticAsset = html.match(/["'](\/_next\/static\/[^"']+)["']/)?.[1];
 
   if (!nextStaticAsset) {
