@@ -7,7 +7,7 @@ const checks = [
   { path: "/.git/config", status: 404 },
   { path: "/", status: 200 },
   { path: "/logo-azul.svg", status: 200 },
-  { path: "/hero-limpeza-pos-obra.webp", status: 200 },
+  { path: "/hero-limpeza-pos-obra-source.png", status: 200 },
 ];
 
 const requiredHeaders = [
@@ -50,11 +50,11 @@ async function main() {
 
   const html = await home.text();
 
-  if (!html.includes("/hero-limpeza-pos-obra.webp")) {
+  if (!html.includes("/hero-limpeza-pos-obra-source.png")) {
     throw new Error("Hero image is not referenced in the home page HTML");
   }
 
-  if (html.includes("/_next/image?url=%2Fhero-limpeza-pos-obra.webp")) {
+  if (html.includes("/_next/image?url=%2Fhero-limpeza-pos-obra-source.png")) {
     throw new Error("Hero image should use the direct public asset URL");
   }
 

@@ -99,7 +99,7 @@ export default function Home() {
               height={830}
               priority
               sizes="100vw"
-              src="/hero-limpeza-pos-obra.webp"
+              src="/hero-limpeza-pos-obra-source.png"
               unoptimized
               width={1894}
             />
