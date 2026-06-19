@@ -100,6 +100,7 @@ export default function Home() {
               priority
               sizes="100vw"
               src="/hero-limpeza-pos-obra.webp"
+              unoptimized
               width={1894}
             />
             <div className="hero-gradient" aria-hidden="true" />

@@ -50,15 +50,9 @@ async function main() {
     throw new Error("Hero image is not referenced in the home page HTML");
   }
 
-  const heroOptimizedAsset = html
-    .match(/["'](\/_next\/image\?url=%2Fhero-limpeza-pos-obra\.webp[^"']+)["']/)?.[1]
-    ?.replaceAll("&amp;", "&");
-
-  if (!heroOptimizedAsset) {
-    throw new Error("Could not find the optimized hero image URL in the home page");
+  if (html.includes("/_next/image?url=%2Fhero-limpeza-pos-obra.webp")) {
+    throw new Error("Hero image should use the direct public asset URL");
   }
-
-  await checkStatus({ path: heroOptimizedAsset, status: 200 });
 
   const nextStaticAsset = html.match(/["'](\/_next\/static\/[^"']+)["']/)?.[1];
 
